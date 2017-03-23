@@ -37,11 +37,11 @@ namespace CardGames
 					
 					SwinGame.PlaySoundEffect ("Slap");
 				}
-				else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT))
+				if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT))
 				{
 					myGame.PlayerHit (0);
 				}
-				else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
+				if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
 				{
 					myGame.PlayerHit (1);
 				}
