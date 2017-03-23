@@ -81,7 +81,7 @@ namespace CardGames.GameLogic
 		{
 			get { return _started; }
 		}
-
+			
 		/// <summary>
 		/// Start the Snap game playing!
 		/// </summary>
@@ -99,6 +99,7 @@ namespace CardGames.GameLogic
 			
 		public void FlipNextCard()
 		{
+			
 			if (_deck.CardsRemaining > 0)			// have cards...
 			{
 				_topCards [0] = _topCards [1];		// move top to card 2
@@ -141,15 +142,18 @@ namespace CardGames.GameLogic
 			//TODO: consider deducting score for miss hits???
 			if ( player >= 0 && player < _score.Length &&  	// its a valid player
 				 IsStarted && 								// and the game is started
-				 _topCards [0] != null && _topCards [0].Rank == _topCards [1].Rank) // and its a match
+				 _topCards [0] != null && 
+				_topCards [0].Rank == _topCards [1].Rank) // and its a match
 			{
 				_score[player]++;
 				//TODO: consider playing a sound here...
 			}
-
+			else if( player >= 0 && player < _score.Length)
+			{
+				_score[player]--;
+			}
 			// stop the game...
 			_started = false;
-			_gameTimer.Stop ();
 		}
 	
 		#region Snap Game Unit Tests
