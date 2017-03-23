@@ -14,6 +14,7 @@ namespace CardGames.GameLogic
 	/// </summary>
 	public class Snap
 	{
+		
 		// Keep only the last two cards...
 		private readonly Card[] _topCards = new Card[2];
 
@@ -82,6 +83,7 @@ namespace CardGames.GameLogic
 			get { return _started; }
 		}
 			
+
 		/// <summary>
 		/// Start the Snap game playing!
 		/// </summary>
